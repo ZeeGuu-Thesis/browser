@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>DefaultValue</key>
+		<string>http://{from}-{to}.syn.dict.cc/?s={query}</string>
+		<key>Key</key>
+		<string>dict</string>
+		<key>Title</key>
+		<string>Dictionary</string>
+		<key>Type</key>
+		<string>TextField</string>
+	</dict>
+	<dict>
+		<key>DefaultValue</key>
+		<string>de</string>
+		<key>Key</key>
+		<string>from</string>
+		<key>Title</key>
+		<string>Source Language</string>
+		<key>Type</key>
+		<string>TextField</string>
+	</dict>
+	<dict>
+		<key>DefaultValue</key>
+		<string>en</string>
+		<key>Key</key>
+		<string>to</string>
+		<key>Title</key>
+		<string>Your Language</string>
+		<key>Type</key>
+		<string>TextField</string>
+	</dict>
+	<dict>
+		<key>Key</key>
+		<string>links</string>
+	</dict>
+</array>
+</plist>

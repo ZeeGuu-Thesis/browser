@@ -1,0 +1,61 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Zee Guu</title>
+        <link rel="stylesheet" href="/lib/bootstrap/bootstrap.css" />
+        <link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.css" />
+        <link rel="stylesheet" href="/gui/css/gui.css" />
+        <script src="/lib/jquery/jquery.js"></script>
+        <script src="/lib/jquery/jquery.validate.js"></script>
+        <script src="/lib/bootstrap/bootstrap.js"></script>
+        <script src="/lib/browser.js"></script>
+        <script src="/lib/zeeguu.js"></script>
+        <script src="/gui/js/login.js"></script>
+    </head>
+    <body id="login">
+        <div id="zeeguu">
+            <div class="container">
+                <h2>Hey, you must be new around here!</h2>
+
+                <p>Do you already have a Zee Guu account? If not, you can create one here in just one easy step.</p>
+
+                <form class="form-horizontal">
+                    <fieldset>
+                        <div class="control-group">
+                          <div class="controls">
+                            <div class="input-prepend">
+                                <span class="add-on"><i class="icon-envelope"></i></span>
+                                <input type="email" name="email" id="email" placeholder="Email address" class="input-xlarge" rel="popover" data-content="Don't worry, we will never send you any emails." data-trigger="manual" />
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="control-group">
+                          <div class="controls">
+                            <div class="input-prepend">
+                                <span class="add-on"><i class="icon-lock"></i></span>
+                                <input id="password" name="password" type="password" placeholder="Password" class="input-xlarge" />
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="alert alert-error hide" id="login-error">
+                          I'm afraid that wasn't correct.
+                        </div>
+                        
+                        <div class="alert alert-error hide" id="register-error">
+                          This email address is already in use, maybe try the login button instead.
+                        </div>
+
+                        <div class="control-group">
+                          <div class="controls">
+                            <button id="login-btn" name="login" class="btn btn-success">Login</button>
+                            <button id="register-btn" name="register" class="btn btn-danger">Create Account</button>
+                          </div>
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+    </body>
+</html>

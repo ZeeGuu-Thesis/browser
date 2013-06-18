@@ -1,0 +1,39 @@
+#zeeguu {
+    position: fixed;
+    bottom: -505px;
+    left: 0;
+    width: 730px;
+    height: 536px;
+    z-index: 1000;
+    padding: 0;
+    margin: 0;
+    box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.2);
+    border: none;
+    border-right: 2px solid #222;
+    border-top: 2px solid #222;
+}
+
+.zeeguu-highlight {
+    background-color: rgba(255, 222, 116, 0.54);
+    border: 1px solid rgba(21, 21, 21, 0.48);
+    border-radius: 1px;
+    padding: 0 2px;
+    margin: 0;
+}
+
+a[data-zeeguu-href] {
+    cursor: text !important;
+}
+
+#zeeguu-selection-mode {
+    position: fixed;
+    top: -25px;
+    left: 0;
+    margin: 0;
+    padding: 5px;
+    background: #dff0d8;
+    color: #468847;
+    border-bottom: 2px solid #222;
+    border-right: 2px solid #222;
+    box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.2);
+}

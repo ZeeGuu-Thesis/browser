@@ -1,0 +1,135 @@
+/* Common */
+
+h2, p {
+    margin-left: 10px;
+}
+
+a:hover, a:active, a:focus {
+    text-decoration: none;
+}
+
+/* Zeeguu frame */
+
+#zeeguu {
+    width: 730px;
+    background: #eee;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif!important;
+    height: 530px;
+}
+
+    #zeeguu.loading {
+        background: #eee url(/gui/img/loading.gif) center center no-repeat;
+    }
+
+    #contribute {
+        height: 29px;
+        margin: 0;
+        padding: 4px;
+    }    
+
+        #contribute i {
+            color: #333;
+        }
+
+        #toggle-links {
+            position: absolute;
+            right: 5px;
+            top: 4px;
+            cursor: pointer;
+        }
+
+            #contribute a.enabled i, #contribute a:hover i, #contribute a:active i, #contribute a:focus i {
+                color: #08c;
+            }
+
+            #contribute a.disabled i {
+                cursor: default;
+                color: #333 !important;
+            }
+
+    iframe {
+        width: 736px;
+        height: 500px;
+        border: none;
+    }
+
+
+    #login-error, #register-error {
+        margin-left: 30px;
+    }
+
+
+
+/* Login form */
+#login form {
+    margin-top: 20px;
+}
+
+    #login .controls {
+        margin-left: 50px;
+    }
+
+    #login .help-inline {
+        font-size: 14px;
+    }
+
+/* Options page */
+
+#options form {
+    margin-top: 50px;
+    margin-left: -30px;
+}
+
+
+/* Popup */
+
+#popup {
+    width: 248px;
+    height: 85px;
+    padding: 5px 5px 0px;
+    position: relative;
+}
+
+    #popup a {
+        color: #333;
+    }
+
+        #popup a:hover, #popup a:focus, #popup a:active, #popup a.enabled {
+            text-decoration: none;
+            color: #08c;
+        }
+
+    #popup .input-prepend {
+        margin-bottom: 4px;
+    }
+
+    #popup .btn {
+        padding: 4px 11px;
+    }
+
+        #selection-mode {
+            width: 116px;
+        }
+
+        #fast-mode {
+            width: 79px;
+        }
+
+        #popup .btn:hover i, #popup .btn.enabled i {
+            color: #08c;
+        }
+
+    #popup p {
+        margin: 2px 1px;
+    }
+
+    #options-btn {
+        position: absolute;
+        right: 6px;
+        bottom: 0px;
+    }
+
+        #options-btn:link, #options-btn:visited {
+            color: #ddd
+        }
+

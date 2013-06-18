@@ -1,0 +1,14 @@
+Action          Origin          Destination         Parameters
+-----------------------------------------------------------------
+translate       any frame       top frame           term, context
+close           any frame       top frame
+window          top frame       event page
+unhighlight     top frame       all frames
+browser_action  event page      top frame
+selection_mode  top frame       all frames          enabled
+toggle_links    zeeguu frame    dict frame          enabled
+contribute      dict frame      top frame
+
+get_state       any frames      event page          
+update_state    any frames      event page          state
+state           event page      any frames          state

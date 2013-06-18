@@ -1,0 +1,61 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Zee Guu Preferences</title>
+        <link rel="stylesheet" href="/lib/bootstrap/bootstrap.css" />
+        <link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.css" />
+        <link rel="stylesheet" href="/gui/css/gui.css" />
+        <script src="/lib/jquery/jquery.js"></script>
+        <script src="/lib/bootstrap/bootstrap.js"></script>
+        <script src="/lib/browser.js"></script>
+        <script src="/lib/zeeguu.js"></script>
+        <script src="/gui/js/options.js"></script>
+    </head>
+    <body id="options">
+        <div class="container">
+            <h2>Zee Guu Preferences</h2>
+            <form class="form-horizontal">
+                <fieldset>
+                    <div class="control-group">
+                      <label class="control-label">Dictionary</label>
+                      <div class="controls">
+                        <input id="dict" name="dict" type="text" placeholder="http://{from}-{to}.syn.dict.cc/?s={query}" class="input-xlarge">
+                        <p class="help-block">Use the placeholder {query} where the search term should go.<br />Optionally you can also use {from} and {to} for the languages.</p>
+                      </div>
+                    </div>
+
+                    <div class="control-group">
+                      <label class="control-label">Your Language</label>
+                      <div class="controls">
+                        <input id="to_lang" name="to_lang" type="text" placeholder="en" class="input-xlarge">
+                        <p class="help-block">Use ISO language codes like "en" or "de" here.</p>
+                      </div>
+                    </div>
+
+                    <div class="control-group">
+                      <label class="control-label">Source Language</label>
+                      <div class="controls">
+                        <input id="from_lang" name="from_lang" type="text" placeholder="de" class="input-xlarge">
+                        <p class="help-block">That's the language you want to learn.</p>
+                      </div>
+                    </div>
+
+                    <div class="alert alert-success hide" id="success">
+                          Your preferences have been saved.
+                    </div>
+
+                    <div class="control-group">
+                      <label class="control-label"></label>
+                      <div class="controls">
+                        <button id="save" name="save" class="btn btn-success">Save</button>
+                        <button id="reset" name="reset" class="btn btn-danger">Reset</button>
+                      </div>
+                    </div>
+                </fieldset>
+            </form>
+            <div class="alert alert-warning">
+              Report bugs on <a href="https://github.com/ZeeGuu/browser/issues">GitHub</a>
+            </div>
+        </div>
+    </body>
+</html>
