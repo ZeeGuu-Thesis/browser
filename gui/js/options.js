@@ -16,13 +16,7 @@ $(function() {
     });
 
     $("#reset").click(function() {
-        browser.sendMessage("update_state", {
-            dict: null,
-            from: null,
-            to: null,
-            fast: null,
-            session: null
-        });
+        browser.sendMessage("reset_state");
         $("#success").show();
         return false;
     });

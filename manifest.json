@@ -1,9 +1,9 @@
 {
   "manifest_version": 2,
 
-  "name": "Zee Guu",
-  "description": "The one and only online profile which monitors your vocabulary evolution as you are learning a new language",
-  "version": "0.4",
+  "name": "ZeeGuu",
+  "description": "Fast and unobstructive translation of web content.",
+  "version": "1.0",
 
   "permissions": [
     "storage",

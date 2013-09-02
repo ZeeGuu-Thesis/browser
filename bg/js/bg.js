@@ -1,4 +1,5 @@
 var PERSITENT_STATE_KEYS = ["dict", "from", "to", "links", "fast", "session"];
+var API_URL = "http://zeeguu.unibe.ch/";  // This is also stored in lib/zeeguu.js
 
 var zeeguu_window = null,
     state;
@@ -11,15 +12,7 @@ function getState(callback) {
         return;
     }
     browser.getSettings(PERSITENT_STATE_KEYS, function(items) {
-        state = {
-            dict: items.dict || "http://{from}-{to}.syn.dict.cc/?s={query}",
-            from: items.from || "de",
-            to: items.to || "en",
-            session: items.session || -1,
-            links: items.links,
-            fast: items.fast || false,  // translate with double-click
-            selectionMode: false
-        };
+        state = fillStateWithDefaults(items);
         if (callback) {
             callback(state);
         }
@@ -35,6 +28,29 @@ function storeState() {
     });
     browser.setSettings(persitentState);
     console.log(persitentState);
+    browser.broadcast("state", {
+        state: state
+    });
+}
+
+function fillStateWithDefaults(state) {
+    return $.extend({
+            dict: "http://{from}-{to}.syn.dict.cc/?s={query}",
+            from: "de",
+            to: "en",
+            session: null,
+            links: false,
+            fast: false,  // translate with double-click
+            selectionMode: false
+    }, state);
+}
+
+function validateSession(sessionID, callback) {
+    $.get(API_URL + "validate?session=" + sessionID).done(function(data) {
+        callback(data == "OK");
+    }).fail(function() {
+        callback(false);
+    });
 }
 
 browser.addMessageListener("window", function(message, sender) {
@@ -61,9 +77,13 @@ browser.addMessageListener("get_state", function(message, sender, response) {
 browser.addMessageListener("update_state", function(message) {
     console.log(message);
     $.extend(true, state, message);
-    browser.broadcast("state", {
-        state: state
-    });
+    browser.setToolbarBadge(state.selectionMode ? "!" : "");
+    storeState();
+});
+
+browser.addMessageListener("reset_state", function(message) {
+    console.log(message);
+    state = fillStateWithDefaults({});
     browser.setToolbarBadge(state.selectionMode ? "!" : "");
     storeState();
 });
@@ -86,4 +106,11 @@ chrome.commands.onCommand.addListener(function(command) {
   console.log('Command:', command);
 });
 
-getState();
+getState(function(state) {
+    validateSession(state.session, function(valid) {
+        if (!valid) {
+            state.session = null;
+            storeState();
+        }
+    });
+});

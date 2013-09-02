@@ -133,7 +133,7 @@ function is_frameset() {
 }
 
 function selected_term(selection) {
-    if (selection.baseNode.nodeType != 3) {
+    if (!selection.baseNode || selection.baseNode.nodeType != 3) {
         return null;
     }
     var term = selection.toString();
